@@ -1,9 +1,6 @@
 import re
 from decorator import decorator
 
-def split(text, splits=0):
-    return re.split('\s|\xa0', text, splits)
-
 class ValidationException(Exception):
     pass
 
