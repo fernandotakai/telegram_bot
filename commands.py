@@ -75,6 +75,9 @@ class Command(object):
             full_command = self._commands[command]
             command_args = self._slash_args_re.findall(full_command)
 
+            if len(command_args) == 1 and len(args) > 1:
+                args = [" ".join(args)]
+
             if command_args and len(command_args) != len(args):
                     raise ValidationException("Wrong number of arguments %s" % full_command)
 
